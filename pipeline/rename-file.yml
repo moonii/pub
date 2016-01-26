@@ -4,7 +4,7 @@ image: docker:///maven#3.3.3
 
 inputs:
   - name: time
-  - name: jar-file
+  - name: moonii-jar-file
 
 outputs:
   - name: jar-file-renamed
@@ -12,5 +12,5 @@ outputs:
 
 run:
   path: mv
-  args: ["jar-file/concourse-java-maven-test-prj-0.0.1-SNAPSHOT.jar", "jar-file-renamed/concourse-java-maven-test-prj-{{time}}.jar"]
+  args: ["moonii-jar-file/concourse-java-maven-test-prj-0.0.1-SNAPSHOT.jar", "moonii-jar-file-renamed/concourse-java-maven-test-prj-{{time}}.jar"]
 

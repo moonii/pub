@@ -12,13 +12,13 @@ resources:
 
 
 jobs:
-  - name: maven-package
+  - name: mv-package
     plan:
     - aggregate:
       - get: rsc-git
         trigger: true
       - get: time
-    - task: maven-package
+    - task: mv-package
       privileged: true
       file: rsc-git/pipeline/maven-package.yml
     - task: rename-file
