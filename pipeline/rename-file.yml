@@ -7,8 +7,8 @@ inputs:
   - name: moonii-jar-file
 
 outputs:
-  - name: jar-file-renamed
-    path: jar-file-renamed
+  - name: moonii-jar-file-renamed
+    path: moonii-jar-file-renamed
 
 run:
   path: mv
