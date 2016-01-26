@@ -3,13 +3,13 @@ platform: linux
 image: docker:///maven#3.3.3
 
 inputs:
-  - name: git-repo
+  - name: rsc-git
 
 outputs:
   - name: jar-file
-    path: git-repo/target
+    path: rsc-git/target
 
 run:
   path: mvn
-  args: ["-f", "git-repo/pom.xml", "-DskipTests=false", "package"]
+  args: ["-f", "rsc-git/pom.xml", "-DskipTests=false", "package"]
 

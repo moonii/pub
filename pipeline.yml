@@ -1,6 +1,6 @@
 
 resources:
-  - name: git-repo
+  - name: rsc-git
     type: git
     source:
       uri: https://github.com/moonii/pub.git
@@ -15,14 +15,14 @@ jobs:
   - name: maven-package
     plan:
     - aggregate:
-      - get: git-repo
+      - get: rsc-git
         trigger: true
       - get: time
     - task: maven-package
       privileged: true
-      file: git-repo/pipeline/maven-package.yml
+      file: rsc-git/pipeline/maven-package.yml
     - task: rename-file
-      file: git-repo/pipeline/rename-file.yml
+      file: rsc-git/pipeline/rename-file.yml
 
 #   - name: rename file
 #     plan:
@@ -32,4 +32,4 @@ jobs:
 #         passed: [maven-package]
 #       - get: time
 #     - task: rename-file
-#       file: git-repo/pipeline/rename-file.yml
+#       file: rsc-git/pipeline/rename-file.yml
