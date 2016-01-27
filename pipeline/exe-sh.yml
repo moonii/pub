@@ -4,6 +4,7 @@ image: "docker:///ubuntu"
 
 inputs:
   - name: rsc-git
+    path: .
 
 run:
-  path: task_show.sh
+  path: ./task_show.sh

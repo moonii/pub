@@ -1,4 +1,6 @@
-echo $PWD
+#!/bin/sh
+
+echo 'tash_show.sh' $PWD
 
 echo 'cd /etc'
 cd /etc/

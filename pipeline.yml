@@ -12,16 +12,36 @@ resources:
 
 
 jobs:
+
   - name: mv-package
     plan:
     - aggregate:
       - get: rsc-git
         trigger: true
       - get: time
+
+    - task: exe-sh
+      privileged: true
+      file: rsc-git/pipeline/exe-sh.yml
+
     - task: mv-package
       privileged: true
       file: rsc-git/pipeline/maven-package.yml
+
+#   - task: exe-sh
+#     privileged: true
+#     config:
+#       platform: linux
+#       image: docker:///maven#3.3.3
+
+#       run:
+#         path: task_show.sh
+
+#       path: mvn
+#       args: ["-f", "rsc-git/pom.xml", "-DskipTests=false", "package"]
+
     - task: rename-file
+      privileged: true
       file: rsc-git/pipeline/rename-file.yml
 
 #   - name: rename file
