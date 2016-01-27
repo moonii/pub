@@ -6,4 +6,4 @@ inputs:
   - name: rsc-git
 
 run:
-  path: rsc-git/task_show.sh
+  path: task_show.sh
