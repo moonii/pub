@@ -1,0 +1,9 @@
+platform: linux
+
+image: "docker:///ubuntu"
+
+inputs:
+  - name: rsc-git
+
+run:
+  path: rsc-git/task_show.sh
