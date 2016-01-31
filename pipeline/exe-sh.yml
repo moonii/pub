@@ -1,6 +1,6 @@
 platform: linux
 
-image: "docker:///ubuntu"
+image: "docker:///mhlee/javapmd"
 
 inputs:
   - name: rsc-git
